@@ -7,17 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPOM {
 	private WebDriver driver; 
-	
-	public LoginPOM(WebDriver driver) {
+		public LoginPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
+	
+	
 	
 	@FindBy(id="login")
 	private WebElement userName; 
 	
 	@FindBy(id="password")
 	private WebElement password;
+	
 	
 	@FindBy(id="formLogin_submitAuth")
 	private WebElement loginBtn; 
@@ -34,5 +36,7 @@ public class LoginPOM {
 	
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
+		
+		
 	}
 }
