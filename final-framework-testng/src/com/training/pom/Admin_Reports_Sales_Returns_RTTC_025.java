@@ -7,9 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Admin_Reports_Sales_Returns_RTTC_025 {
-private WebDriver driver; 
-WebElement element;
-	
+private  WebDriver driver; 
+//public WebElement element;
+
+
 	public Admin_Reports_Sales_Returns_RTTC_025(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
@@ -46,23 +47,36 @@ WebElement element;
 	{
 		this.returns.click();
 		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;         
+		js.executeScript("arguments[0].style.border='3px solid red'", returns); 
+		
 		}
 	
 	public void clickOnGroupByWeek() throws InterruptedException {
 		this.week.click();
 		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;         
+		js.executeScript("arguments[0].style.border='3px solid red'", week); 
+		
 	}
 	public void filterButtonClick() throws InterruptedException {
 		this.filterButton.click();
 		Thread.sleep(3000);
+		
+			//draw the border
+			JavascriptExecutor js = (JavascriptExecutor) driver;         
+			js.executeScript("arguments[0].style.border='3px solid red'", filterButton); 
+			
+		
+
 	}
-	public void javascript_draw_border()
+	/*public  void javascript_draw_border(WebElement element)
 	{
 		//draw the border
 		JavascriptExecutor js = (JavascriptExecutor) driver;         
 		js.executeScript("arguments[0].style.border='3px solid red'", element); 
 		
-	}
+	}*/
 
 
 }
