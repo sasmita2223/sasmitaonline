@@ -1,9 +1,13 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class Medium_055 {
 private WebDriver driver; 
@@ -136,5 +140,40 @@ private WebDriver driver;
 		this.saveOption.click();
 		Thread.sleep(3000);
 	}
+	//logout
+	@FindBy(xpath="//i[@class='fa fa-sign-out fa-lg']")
+	private WebElement logout;
+	
+	public void clickOnLogout() throws InterruptedException {
+		this.logout.click();
+		Thread.sleep(4000);
+		driver.get("http://retailm1.upskills.in/");
+		Thread.sleep(3000);
+		
+	}
+	
+	
+	//User_Home Page: click on search
+	@FindBy(xpath="//*[@id='filter_keyword']")
+	private WebElement searchButton;
+	
+	public void clickOnSearchButton(String searchButton) throws InterruptedException {
+		//mouseover for the search option
+		Actions actions = new Actions(driver);		
+		actions.moveToElement(driver.findElement(By.id("filter_keyword"))).build().perform();
+		
+		//click on search option
+		this.searchButton.click();
+		Thread.sleep(3000);
+		//searched for the added item & click on it
+		this.searchButton.sendKeys(searchButton);
+		this.searchButton.sendKeys(Keys.ENTER);
+		Thread.sleep(3000);
+		
+		
+	}
+	
+	
+	
 	
 }

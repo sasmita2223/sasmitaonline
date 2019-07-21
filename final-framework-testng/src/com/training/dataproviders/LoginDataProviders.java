@@ -32,13 +32,37 @@ public class LoginDataProviders {
 	
 	@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
-		String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; 
-		return new ApachePOIExcelRead().getExcelContent(fileName); 
+	String fileName ="C:/Users/Naveen/Desktop/Testing.xls"; 
+	int sheetno = 0;
+	return new ApachePOIExcelRead().getExcelContent(fileName, sheetno); 
+		
 	}
 	
-	@DataProvider(name = "xls-inputs")
-	public Object[][] getXLSData(){
-		// ensure you will have the title as first line in the file 
-		return new ReadExcel().getExcelData("C:/Users/Naveen/Desktop/Testing.xls", "Sheet1"); 
+	@DataProvider(name = "excel-inputsRTTC_82")
+	public Object[][] getExcelDataRTTC_82()	{  
+	String fileName ="C:\\Users\\IBM_ADMIN\\Desktop\\Selenium\\onlinePractise\\ExcelData\\TestCaseData.xlsx";
+	int sheetno = 0;
+	return new ApachePOIExcelRead().getExcelContent(fileName, sheetno);
+	
 	}
-}
+	
+	@DataProvider(name = "excel-inputsRTTC_83")
+	public Object[][] getExcelDataRTTC_83(){
+		
+		String fileName ="C:\\Users\\IBM_ADMIN\\Desktop\\Selenium\\onlinePractise\\ExcelData\\TestCaseData.xlsx";
+	int sheetno = 1;
+	return new ApachePOIExcelRead().getExcelContent(fileName, sheetno); 
+		
+	}
+	
+	@DataProvider(name = "excel-inputsRTTC_85")
+	public Object[][] getExcelDataRTTC_85(){
+	String fileName ="C:\\Users\\IBM_ADMIN\\Desktop\\Selenium\\onlinePractise\\ExcelData\\TestCaseData.xlsx";
+	int sheetno = 2;
+	return new ApachePOIExcelRead().getExcelContent(fileName, sheetno); 
+		
+	}
+		
+	}
+	
+
